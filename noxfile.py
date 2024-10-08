@@ -22,9 +22,9 @@ add_uv_to_environ()
 
 py_versions = ["3.12","3.11", "3.10", "3.9"]
 
-@nox.session(python=py_versions,venv_backend="uv")
+@nox.session(python=py_versions)
 def tests(session):
+    args = session.posargs or ["--cov", "-m", "not e2e"]
     session.install(".",)
-    session.install("pytest", "pytest-cov")
-    session.run("pytest", "--cov")
-    session.run("pytest")
+    session.install("pytest", "pytest-cov", "pytest-mock")
+    session.run("pytest", *args)
