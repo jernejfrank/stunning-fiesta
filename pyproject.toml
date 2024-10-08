@@ -1,0 +1,21 @@
+[project]
+name = "stunning-fiesta"
+version = "0.1.0"
+license = "MIT"
+description = "Learning repo for creating hypermodern python packages"
+author = "Jernej Frank <jernejfrank@gmail.com>"
+homepage = "https://github.com/jernejfrank/stunning-fiesta"
+repository = "https://github.com/jernejfrank/stunning-fiesta"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "click>=8.1.7",
+    "requests>=2.32.3",
+]
+
+[project.scripts]
+stunning-fiesta = "stunning_fiesta.console:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
